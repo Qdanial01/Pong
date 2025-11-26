@@ -2,8 +2,8 @@
 A classic remake of the original Pong, just like the early days of Atari, built entirely in Java with Swing. Control your paddle on the left while going against the AI on the other side. Ball speed increases as the game progresses, making each rally more intense than the last.
 
 ## 🛠️ Technology
-- Java (JDK 8+)
-- Java Swing
+- `Java (JDK 8+)`
+- `Java Swing`
 
 ## 🚀 Features
 - Player-controlled paddle on the left (move up/down)
