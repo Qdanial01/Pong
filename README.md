@@ -1,37 +1,38 @@
-# Pong
-A traditional Pong game just like the early days of the Atari developed completely with Java.
+#🎮 Pong
+A classic remake of the original Pong, just like the early days of Atari, built entirely in Java with Swing. Control your paddle on the left while going against the AI on the other side. Ball speed increases as the game progresses, making each rally more intense than the last.
 
-### Features
-- Players control a paddle on the left side moving it up and down
-- AI paddle on the right side will do the same
+##🛠️ Technology
+- Java (JDK 8+)
+- Java Swing
 
-## Pages
-Entire project uses 4 pages to run: Ball.java, Main.java, Paddle.java, PongGame.java.
-### Ball.java
-Class for the ball in the game.
-- Instance of ball values are all set here such as the speed, x and y positions.
-- Colour of ball is also set here.
-- increaseSpeed function is inside so as after each bouce, the speed that the ball is travelling increases.
-- function bounceOffEdges is set so that the ball only bounces at the top and bottom edges, anything else should considered a point on either player or cpu side.
+##🚀 Features
+- Player-controlled paddle on the left (move up/down)
+- AI-controlled paddle on the right, which reacts to the ball’s position
+- Ball bounces off top/bottom edges - misses result in points
+- Ball speed increases after a set number of bounces for rising difficulty
+- Simple, lightweight, no external libraries required, only Java
 
-### Main.java
-Entry point for Pong game.
-- JFrame is initialized with the title 'Pong'
-- 650x495 pixel size set however you can adjust it to however big you want.
-- Instance of PongGame is called here
-- Swing timer used to update Pong game ever 33 milliseconds
+##🧠 The Process
+This was my first project using Java outside of school, and I wanted to familiarise myself with Java’s GUI capabilities and test my ability to develop games through basic game logic. I didn’t want the entire Pong code to run on one page, as that can be very messy and dense, so the project is structured into four main classes:
+- `Ball.java` - handles ball position, movement, bounce logic and speed acceleration in relation to the bounce thresholds.
+- `Paddle.java` - defines paddle properties (position, size, speed, collision detection) and handles paddle movement for both the player and AI.
+- `PongGame.java` - game loop, rendering, collision detection, scoring, speed escalation.
+- `Main.java` - sets up game window (JFrame), game engine initialisation, activates loop with Swing timer
 
-### Paddle.java
-Defines paddle mechanics for the Pong game. Deals with paddle movement, collision detection, and rendering.
-- Paddle properties help determine position, size, speed and color
-- paint(Graphios g) method renders paddle on screen with g.fillRect()
-- moveTowards(int targetY) method moves the paddle smoothly towards a target position (applied for both player and pc)
-- checkCollision(ball B) checks if ball collides with the paddle. collision occurs = return true leading to change in direction.
+With this separation, each class will only have one responsibility to focus on, so if there is any need to extend or fix any part of the code, it would be easier.
 
-### PongGame.java
-Core game engine of the Pong game. Manages the game loop, rendering, collision detection, scoring, and difficulty progression.
-- gameLogic() handles ball movement, edge bouncing, player and cpu movement, collision detection and score handling.
-- After every score, reset() is called everytime
-- Every bounce count is tracked to increase speed (every 5 bounce = increaseSpeed())
-- Player controls paddle using mouse's Y position
-- AI paddle followes the ball's Y position
+##📦 Running the Project
+1. Clone the repository
+2. Compile the files
+3. Run game
+
+Alternatively, if you prefer running on an IDE:
+1. Open the folder in any Java-compatible IDE (e.g. IntelliJ IDEA, Eclipse)
+2. Make sure JDK is installed
+3. Run `Main.java` directly
+
+##**🎮 How to Play**
+- Player (Left Paddle): Use **W** (up) and **S** (down) keys
+- AI (Right Paddle): Controlled by the program automatically
+- First to miss the ball gives a point to the opponent. The ball then resets and continues
+- After a number of bounces, the ball speed increases
