@@ -35,4 +35,7 @@ Alternatively, if you prefer running on an IDE:
 - Player (Left Paddle): Use **W** (up) and **S** (down) keys
 - AI (Right Paddle): Controlled by the program automatically
 - First to miss the ball gives a point to the opponent. The ball then resets and continues
-- After a number of bounces, the ball speed increases
+- After several bounces, the ball speed increases
+
+## 🖼️ Preview
+https://github.com/user-attachments/assets/92490f04-41f4-400f-b3a0-99e9a0d3c7d8
